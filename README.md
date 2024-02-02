@@ -1,2 +1,2 @@
 # GRPC
-Repository which contians my handson GRPC.
+Repository which contians my GRPC handson.
