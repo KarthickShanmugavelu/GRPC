@@ -1,5 +1,7 @@
 package com.grpc.tutorails.handson;
 
+import com.grpc.course.handson.BodyStyle;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +15,7 @@ public class Mapdemo {
                 .setYear(2022).build();
         com.grpc.course.handson.Car swift = com.grpc.course.handson.Car.newBuilder().setMake("Maruthi")
                 .setModel("Swift")
-                .setYear(2023).build();
+                .setYear(2023).setBodyStyle(BodyStyle.SUV).build();
         com.grpc.course.handson.Car figo = com.grpc.course.handson.Car.newBuilder().setMake("Ford")
                 .setModel("Figo")
                 .setYear(2024).build();
@@ -29,7 +31,8 @@ public class Mapdemo {
                 //"\ndealer.getModelsOrThrow "+ dealer.getModelsOrThrow(245)+
                 "\ndealer.getModelsOrDefault "+dealer.getModelsOrDefault(234,accord)+
                         "\ndealer.getModelsCount() "+dealer.getModelsCount()+
-                        "\ndealer.getModels "+dealer.getModels()
+                        "\ndealer.getModels "+dealer.getModels()+
+                        "\nenum: "+dealer.getModelsOrThrow(2023).getBodyStyle()
 
 
         );
