@@ -1,10 +1,10 @@
-package com.grpc.tutorails.handson;
+package com.old.handson;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.json.JPerson;
+import com.grpc.course.handson.OldPeople;
+import com.old.json.JPerson;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,8 +13,8 @@ import java.nio.file.Paths;
 
 public class PersonDemo {
     public static void main(String[] args) throws IOException {
-        com.grpc.course.handson.Person person = com.grpc.course.handson.Person.newBuilder().setName("sam").setAge(25).build();
-        com.grpc.course.handson.Person person1 = com.grpc.course.handson.Person.newBuilder().setName("Sam").setAge(25).build();
+        OldPeople person = OldPeople.newBuilder().setName("sam").setAge(25).build();
+        OldPeople person1 = OldPeople.newBuilder().setName("Sam").setAge(25).build();
 
         //equals() & == behavior
         System.out.println(person.equals(person1));
@@ -25,7 +25,7 @@ public class PersonDemo {
         Files.write(path,person.toByteArray());
 
         byte[] bytes=Files.readAllBytes(path);
-        com.grpc.course.handson.Person newPerson = com.grpc.course.handson.Person.parseFrom(bytes);
+        OldPeople newPerson = OldPeople.parseFrom(bytes);
         System.out.println(newPerson);
 
         // JSON Vs Proto Performance comparison
@@ -43,13 +43,13 @@ public class PersonDemo {
 
         };
 
-        com.grpc.course.handson.Person person2 = com.grpc.course.handson.Person.newBuilder().setName("Sam").setAge(25).build();
+        OldPeople person2 = OldPeople.newBuilder().setName("Sam").setAge(25).build();
 
 
         Runnable proto=()->{
             byte[] bytes2 = person2.toByteArray();
             try {
-                com.grpc.course.handson.Person person3 = com.grpc.course.handson.Person.parseFrom(bytes2);
+                OldPeople person3 = OldPeople.parseFrom(bytes2);
             } catch (InvalidProtocolBufferException e) {
                 throw new RuntimeException(e);
             }

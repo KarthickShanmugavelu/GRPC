@@ -1,7 +1,8 @@
-package com.grpc.tutorails.handson;
+package com.old.handson;
 
 import com.grpc.course.handson.Address;
 import com.grpc.course.handson.Car;
+import com.grpc.course.handson.OldPeople;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class ProtoCompositionDemo {
         cars.add(swift);
         cars.add(figo);
 
-        com.grpc.course.handson.Person person = com.grpc.course.handson.Person.newBuilder()
+        OldPeople person = OldPeople.newBuilder()
                 .setName("Sam")
                 .setAge(30)
                 .setAddress(address)

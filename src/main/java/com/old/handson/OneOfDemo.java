@@ -1,4 +1,4 @@
-package com.grpc.tutorails.handson;
+package com.old.handson;
 
 public class OneOfDemo {
     public static void main(String[] args) {

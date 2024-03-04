@@ -1,10 +1,11 @@
 syntax="proto3";
+package old.tutorials;
 option java_multiple_files=true;
 option java_package="com.grpc.course.handson";
-import "common/car.proto";
-import "common/address.proto";
+import "old/common/car.proto";
+import "old/common/address.proto";
 
-message Person{
+message OldPeople{
   string name=1;
   int32 age=2;
   common.Address address=3;
