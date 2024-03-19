@@ -1,4 +1,4 @@
-package com.grpc.tutorails.codes.handson.sec02;
+package com.grpc.tutorails.codes.handson.latest;
 
 import com.grpc.protobuf.tutorials.handson.sec02.Person;
 import org.slf4j.Logger;
